@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebAPI;
 using WebAPI.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,5 +26,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.DatabaseEnsureCreated();
 
 app.Run();
